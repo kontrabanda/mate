@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<project name="Mate" basedir="." default="compile">
+	<target name="compile">
+		<mkdir dir="classes"/>
+		<javac srcdir="src" destdir="classes">
+		</javac>
+	</target>
+
+	<target name="run">
+		<java classname="Controller" fork="true">
+			<sysproperty key="java.library.path" path="./lib"/>
+			<classpath>
+				<pathelement location="./classes"/>
+			</classpath>
+		</java>
+	</target>
+</project>
